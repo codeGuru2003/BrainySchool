@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "provider": "jsdelivr",
+      "library": "chart.js@3.8.0",
+      "destination": "wwwroot/lib/chart.js/"
+    }
+  ,
+{
+  "library": "Chart.js@3.8.0",
+  "destination": "wwwroot/lib/Chart.js/"
+}
+]
+}

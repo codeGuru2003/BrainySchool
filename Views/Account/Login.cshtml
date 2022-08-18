@@ -1,0 +1,70 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Brainy School</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+</head>
+<style>
+    *{
+        font-family: Montserrat;
+        color: white;
+    }
+    .img{
+        background-image: url(../tom.JPG);
+        background-size: cover;
+    }
+    .div2{
+        background:linear-gradient(purple, blue);
+        opacity: 67%;
+    }
+    h1{
+        color: white;
+        font-weight: 700;
+    }
+</style>
+<body class="img">
+    <main class="pb-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xs-6 col-sm-6">
+                    <br /> <br />
+                    <center><img src="~/images/logo.png" width="350px"/></center>
+                     @if(TempData["ErrorMessage"] != null){
+                        <div class="alert alert-dismissible fade show" role="alert" style="background-color: rebeccapurple;">
+                            <strong class="text-light">@TempData["ErrorMessage"]</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" class="text-light">&times;</span>
+                            </button>
+                        </div>
+                    }
+                    <div style="padding:22px;background-color:rebeccapurple;">
+                        <form method="post" asp-action="Login" asp-controller="Account">
+                            <div class="form-group">
+                                <label asp-for="Username" class="text-light">Username</label>
+                                <input asp-for="Username" class="form-control" required/>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="text-light">Password</label>
+                                <input type="password" asp-for="Password" class="form-control" required/>
+                            </div>
+                            <button type="submit" class="btn btn-outline-light" style="text-align:center">Login</button><br />
+                            <p class="mt-5 mb-3 text-light text-center">&copy; Brainy School 2021 - 2022</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

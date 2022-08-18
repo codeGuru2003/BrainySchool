@@ -1,0 +1,27 @@
+﻿@using HealthRecordsPro.Data
+@inject ApplicationDbContext _context;
+@{
+    ViewData["Title"] = "Settings";
+}
+<h2 class="text-center" style="color:rebeccapurple;">Settings Dashboard</h2><br/>
+<div class="row">
+    <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="Schools" class="btn text-light" style="background-color:rebeccapurple;">Manage School</a>
+    </div>
+    <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="AcademicSchoolYearTypes" class="btn text-light" style="background-color:rebeccapurple;">School Year Types</a>
+    </div>
+     <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="AcademicSemesterTypes" class="btn text-light" style="background-color:rebeccapurple;">Semester Types</a>
+    </div>
+    <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="Images" class="btn text-light" style="background-color:rebeccapurple;">Manage Images</a>
+    </div>
+    <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="Subjects" class="btn text-light" style="background-color:rebeccapurple;">Manage Subjects</a>
+    </div>
+    <div class="col-lg-2 col-md-2">
+        <a asp-action="Index" asp-controller="Currencies" class="btn text-light" style="background-color:rebeccapurple;">Currencies</a>
+    </div>
+</div>
+

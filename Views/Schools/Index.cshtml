@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HealthRecordsPro.Models.School>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}<br />
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <tr style="background-color:rebeccapurple;" class="text-light" rowspan="3">
+            <th>List of Schools</th>
+            <th></th>
+            <th><a asp-action="Create" class="text-light">Add New</a></th>
+        </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+    </table>
+</div>
